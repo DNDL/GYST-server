@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const User = require('../lib/models/User');
 const Habit = require('../lib/models/Habit');
 
-// jest.mock('../lib/middleware/ensure-auth.js');
+jest.mock('../lib/middleware/ensure-auth.js');
 
 describe('test habit routes', () => {
   beforeAll(() => {
@@ -60,7 +60,6 @@ describe('test habit routes', () => {
       .patch(`/api/v1/habits/${habit._id}`)
       .send({ frequency: 'Daily', goal: 22, why: 'FOR REASONS, DANNY', no: 'mister hogan' })
       .then(res => {
-        console.log('updated habit in test', res.body);
         expect(res.body).toEqual({
           _id: expect.any(String),
           owner: user._id.toString(),
