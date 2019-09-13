@@ -29,8 +29,7 @@ describe('test habit routes', () => {
           _id: expect.any(String),
           friends: [],
           friendInvitations: [],
-          email: 'aaaaaa@gmail.com',
-          __v: 0
+          email: 'aaaaaa@gmail.com'
         });
       });
   });

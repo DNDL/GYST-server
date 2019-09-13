@@ -34,8 +34,7 @@ describe('test habit routes', () => {
           title: 'Noahs habit',
           frequency: 'Daily',
           goal: 2,
-          why: 'Cause',
-          __v: 0
+          why: 'Cause'
         });
         done();
       });
@@ -66,8 +65,7 @@ describe('test habit routes', () => {
           title: 'Test habit1',
           frequency: 'Daily',
           goal: 22,
-          why: 'FOR REASONS, DANNY',
-          __v: 0
+          why: 'FOR REASONS, DANNY'
         });
         done();
       });
@@ -85,8 +83,7 @@ describe('test habit routes', () => {
           title: 'Test habit1',
           frequency: 'Weekly',
           goal: 2,
-          why: 'Cause',
-          __v: 0
+          why: 'Cause'
         });
         done();
       });
