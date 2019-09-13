@@ -46,7 +46,7 @@ describe('test habit routes', () => {
     await Habit.create({ owner: user._id, title: 'Test habit1', frequency: 'Weekly', goal: 2, why: 'Cause' });
     await Habit.create({ owner: user._id, title: 'Test habit2', frequency: 'Daily', goal: 1, why: 'Cause' });
     return request(app)
-      .get(`/api/v1/habits/user/${user._id}`)
+      .get('/api/v1/habits/')
       .then(res => {
         expect(res.body).toHaveLength(2);
         done();
