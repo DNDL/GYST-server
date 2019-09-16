@@ -26,7 +26,7 @@ describe('test habit routes', () => {
     const user = await User.create({ email: 'test@test.com' });
     return request(app)
       .post('/api/v1/habits')
-      .send({ owner: user._id, title: 'Noahs habit', frequency: 'Daily', goal: 2, days: { m: true }, color: 'blue', why: 'Cause' })
+      .send({ habit: { owner: user._id, title: 'Noahs habit', frequency: 'Daily', goal: 2, days: { m: true }, color: 'blue', why: 'Cause' } })
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
