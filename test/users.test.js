@@ -35,22 +35,22 @@ describe('test habit routes', () => {
       });
   });
 
-  it('can patch/send friend request by email', async() => {
+  it('can patch/send friend request by email', async done => {
     //represents current signed in user
     const currentUser = await User.create({ email: 'test@test.com' });
     //represents user youre going to add
     const user = await User.create({ email: 'addme@test.com' });
     return request(app)
-      .patch('/api/v1/users')
+      .patch('/api/v1/users/friends/add')
       .send({ email: 'addme@test.com' })
       .then(res => {
-        console.log(res.body)
         expect(res.body).toEqual({
           _id: expect.any(String),
           email: user.email,
-          friends: [],
-          friendInvitations: [currentUser._id]
+          friendInvitations: [currentUser._id.toString()],
+          friends: []
         });
+        done();
       });
   });
 });
