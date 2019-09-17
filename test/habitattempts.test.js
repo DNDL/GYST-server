@@ -34,26 +34,6 @@ describe('test habit routes', () => {
           _id: expect.any(String),
           owner: expect.any(String),
           habit: habit._id.toString(),
-          progress: 0,
-          createdAt: expect.any(String),
-          updatedAt: expect.any(String)
-        });
-      });
-  });
-
-  it('can update a habitAttempt using /PATCH', async() => {
-    const user = await User.create({ email: 'test@test.com' });
-    const habit = await Habit.create({ owner: user._id, title: 'Test habit1', frequency: 'Weekly', goal: 2, days: { m: true }, color: 'blue', why: 'Cause' });
-    const attempt = await HabitAttempt.create({ owner: user._id, habit: habit._id });
-    return request(app)
-      .patch(`/api/v1/habits/attempts/${attempt._id}`)
-      .send({ progress: 1 })
-      .then(res => {
-        expect(res.body).toEqual({
-          _id: expect.any(String),
-          owner: expect.any(String),
-          habit: habit._id.toString(),
-          progress: 1,
           createdAt: expect.any(String),
           updatedAt: expect.any(String)
         });
