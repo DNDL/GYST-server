@@ -36,7 +36,9 @@ describe('test habit routes', () => {
           goal: 2,
           days: { m: true },
           color: 'blue',
-          why: 'Cause'
+          why: 'Cause',
+          createdAt: expect.any(String),
+          updatedAt: expect.any(String)
         });
         done();
       });
@@ -69,7 +71,9 @@ describe('test habit routes', () => {
           goal: 22,
           days: { m: true },
           color: 'blue',
-          why: 'FOR REASONS, DANNY'
+          why: 'FOR REASONS, DANNY',
+          createdAt: expect.any(String),
+          updatedAt: expect.any(String)
         });
         done();
       });
@@ -89,7 +93,9 @@ describe('test habit routes', () => {
           goal: 2,
           days: { m: true },
           color: 'blue',
-          why: 'Cause'
+          why: 'Cause',
+          createdAt: expect.any(String),
+          updatedAt: expect.any(String)
         });
         done();
       });
