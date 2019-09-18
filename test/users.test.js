@@ -4,7 +4,6 @@ const request = require('supertest');
 const app = require('../lib/app');
 const connect = require('../lib/utils/connect');
 const mongoose = require('mongoose');
-const User = require('../lib/models/User');
 
 jest.mock('../lib/middleware/ensure-auth.js');
 
@@ -32,25 +31,6 @@ describe('test habit routes', () => {
           friendInvitations: [],
           email: 'aaaaaa@gmail.com'
         });
-      });
-  });
-
-  it('can patch/send friend request by email', async done => {
-    //represents current signed in user
-    const currentUser = await User.create({ email: 'test@test.com' });
-    //represents user youre going to add
-    const user = await User.create({ email: 'addme@test.com' });
-    return request(app)
-      .patch('/api/v1/users/friends/add')
-      .send({ email: 'addme@test.com' })
-      .then(res => {
-        expect(res.body).toEqual({
-          _id: expect.any(String),
-          email: user.email,
-          friendInvitations: [currentUser._id.toString()],
-          friends: []
-        });
-        done();
       });
   });
 });
