@@ -9,8 +9,13 @@ https://gyst.dev
 https://github.com/DNDL/GYST-client
 
 ## The Tech
+
+Front-End
 * React
 * Redux
+* CSS
+
+Back-End
 * MongoDB
 * Mongoose
 * Express
