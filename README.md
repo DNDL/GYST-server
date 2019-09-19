@@ -1,16 +1,16 @@
-GYST-server
+## GYST-server
 
 Back-end for GYST full-stack app. A habit tracking app focused on accountabiity. 
 
-Deployed
+## Deployed
 https://gyst.dev
 
-Front-End Repo
+## Front-End Repo
 https://github.com/joliliah/i-believe-in-url-frontend/tree/dev
 
-The Tech
-React
-Redux
-MongoDB
-Mongoose
-Express
+## The Tech
+* React
+* Redux
+* MongoDB
+* Mongoose
+* Express
